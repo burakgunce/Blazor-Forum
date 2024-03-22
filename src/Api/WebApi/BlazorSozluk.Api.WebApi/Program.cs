@@ -1,4 +1,5 @@
 using BlazorSozluk.Api.Application.Extensions;
+using BlazorSozluk.Api.WebApi.Infrastructure.Extensions;
 using BlazorSozluk.Infrastructure.Persistence.Extensions;
 using FluentValidation.AspNetCore;
 
@@ -25,6 +26,8 @@ namespace BlazorSozluk.Api.WebApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.ConfigureAuth(builder.Configuration);
+
             builder.Services.AddApplicationRegistration();
             builder.Services.AddInfrastructureRegistration(builder.Configuration);
 
@@ -39,6 +42,9 @@ namespace BlazorSozluk.Api.WebApi
 
             app.UseHttpsRedirection();
 
+            app.ConfigureExceptionHandling(app.Environment.IsDevelopment());
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
