@@ -1,4 +1,6 @@
-﻿using BlazorSozluk.Api.Domain.Models;
+﻿using BlazorSozluk.Api.Application.Features.Queries.GetEntries;
+using BlazorSozluk.Api.Application.Features.Queries.GetMainPageEntries;
+using BlazorSozluk.Api.Domain.Models;
 using BlazorSozluk.Common.Models.RequestModels;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -27,7 +29,6 @@ namespace BlazorSozluk.Api.WebApi.Controllers
                 command.CreatedById = UserId;
 
             var result = await _mediator.Send(command);
-
             return Ok(result);
         }
 
@@ -40,8 +41,22 @@ namespace BlazorSozluk.Api.WebApi.Controllers
                 command.CreatedById = UserId;
 
             var result = await _mediator.Send(command);
-
             return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetEntries([FromQuery] GetEntriesQuery query)
+        {
+            var entries = await _mediator.Send(query);
+            return Ok(entries);
+        }
+
+        [HttpGet]
+        [Route("MainPageEntries")]
+        public async Task<IActionResult> GetMainPageEntries(int page, int pageSize)
+        {
+            var entries = await _mediator.Send(new GetMainPageEntriesQuery(UserId, page, pageSize));
+            return Ok(entries);
         }
     }
 }
