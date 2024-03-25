@@ -3,6 +3,7 @@ using BlazorSozluk.Common.Infrastructure.Exceptions;
 using BlazorSozluk.Common.Infrastructure.Results;
 using BlazorSozluk.Common.Models.Queries;
 using BlazorSozluk.Common.Models.RequestModels;
+using BlazorSozluk.WebApp.Auth;
 using BlazorSozluk.WebApp.Extensions;
 using BlazorSozluk.WebApp.Infrastructure.Services.Interfaces;
 using Microsoft.AspNetCore.Components.Authorization;

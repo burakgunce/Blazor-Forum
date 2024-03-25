@@ -3,6 +3,9 @@ using BlazorSozluk.WebApp.Infrastructure.Services.Interfaces;
 using BlazorSozluk.WebApp.Infrastructure.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.AspNetCore.Components.Authorization;
+using BlazorSozluk.WebApp.Auth;
+using Blazored.LocalStorage;
 
 namespace BlazorSozluk.WebApp
 {
@@ -28,7 +31,13 @@ namespace BlazorSozluk.WebApp
             builder.Services.AddTransient<IUserService, UserService>();
             builder.Services.AddTransient<IIdentityService, IdentityService>();
 
+            builder.Services.AddScoped<AuthenticationStateProvider, AuthStateProvider>();
+
             //builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+            builder.Services.AddBlazoredLocalStorage();
+            
+            builder.Services.AddAuthorizationCore();
 
             await builder.Build().RunAsync();
         }
