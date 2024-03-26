@@ -17,13 +17,19 @@ namespace BlazorSozluk.WebApp
             builder.RootComponents.Add<App>("#app");
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
-            builder.Services.AddHttpClient("WebApiClient", client => client.BaseAddress = new Uri("https://localhost:PORT"));
+            builder.Services.AddHttpClient("WebApiClient", client =>
+            {
+                client.BaseAddress = new Uri("http://localhost:PORT");
+            })
+                .AddHttpMessageHandler<AuthTokenHandler>();
 
             builder.Services.AddScoped(sp =>
             {
                 var clientFactory = sp.GetRequiredService<IHttpClientFactory>();
                 return clientFactory.CreateClient("WebApiClient");
             });
+
+            builder.Services.AddScoped<AuthTokenHandler>();
 
             builder.Services.AddTransient<IEntryService, EntryService>();
             builder.Services.AddTransient<IVoteService, VoteService>();
