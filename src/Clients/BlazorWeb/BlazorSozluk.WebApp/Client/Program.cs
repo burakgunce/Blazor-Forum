@@ -19,7 +19,7 @@ namespace BlazorSozluk.WebApp
 
             builder.Services.AddHttpClient("WebApiClient", client =>
             {
-                client.BaseAddress = new Uri("http://localhost:PORT");
+                client.BaseAddress = new Uri("http://localhost:7282");
             })
                 .AddHttpMessageHandler<AuthTokenHandler>();
 

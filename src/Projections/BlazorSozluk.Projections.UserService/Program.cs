@@ -1,3 +1,5 @@
+using BlazorSozluk.Projections.UserService.Services;
+
 namespace BlazorSozluk.Projections.UserService
 {
     public class Program
@@ -8,6 +10,8 @@ namespace BlazorSozluk.Projections.UserService
                 .ConfigureServices(services =>
                 {
                     services.AddHostedService<Worker>();
+                    services.AddTransient<BlazorSozluk.Projections.UserService.Services.UserService>();
+                    services.AddTransient<EmailService>();
                 })
                 .Build();
 
