@@ -39,3 +39,44 @@ This project aims to create a clone of the popular internet platform EksiSozluk.
 ## General Structure
 
 ![BlazorForum-general-structure](https://github.com/burakgunce/Blazor-Forum/assets/87397100/f98c939b-14ae-48d8-9cf8-9ce27204a5e5)
+
+| Technology / Library                                        | Version  |
+|-------------------------------------------------------------|----------|
+| .NET                                                        | 6.0      |
+| Autofac                                                     | 6.4.0    |
+| Autofac.Extensions.DependencyInjection                     | 8.0.0    |
+| Autofac.Extras.DynamicProxy                                 | 6.0.1    |
+| Bogus                                                       | 35.5.0   |
+| Dapper                                                      | 2.1.35   |
+| FluentValidation                                            | 11.9.0   |
+| FluentValidation.AspNetCore                                 | 11.3.0   |
+| FluentValidation.DependencyInjectionExtensions              | 11.9.0   |
+| MediatR                                                     | 12.2.0   |
+| MediatR.Extensions.Microsoft.DependencyInjection          | 11.0.0   |
+| Microsoft.AspNetCore.Authentication.JwtBearer               | 6.0.26   |
+| Microsoft.AspNetCore.Components.Authorization             | 6.0.26   |
+| Microsoft.AspNetCore.Components.WebAssembly                 | 6.0.20   |
+| Microsoft.AspNetCore.Components.WebAssembly.DevServer       | 6.0.20   |
+| Microsoft.AspNetCore.Features                               | 5.0.17   |
+| Microsoft.AspNetCore.Http                                   | 2.2.2    |
+| Microsoft.AspNetCore.Http.Abstractions                     | 2.2.0    |
+| Microsoft.Data.SqlClient                                    | 2.1.4    |
+| Microsoft.Data.SqlClient                                    | 5.2.0    |
+| Microsoft.EntityFrameworkCore                              | 6.0.26   |
+| Microsoft.EntityFrameworkCore.Relational                   | 6.0.26   |
+| Microsoft.EntityFrameworkCore.SqlServer                     | 6.0.26   |
+| Microsoft.EntityFrameworkCore.Tools                          | 6.0.26   |
+| Microsoft.Extensions.Configuration.Abstractions           | 6.0.0    |
+| Microsoft.Extensions.Configuration.Binder                   | 6.0.0    |
+| Microsoft.Extensions.DependencyInjection                | 6.0.1    |
+| Microsoft.Extensions.DependencyInjection.Abstractions   | 6.0.0    |
+| Microsoft.Extensions.Hosting                                | 6.0.1    |
+| Microsoft.Extensions.Http                                   | 6.0.0    |
+| Microsoft.IdentityModel.Tokens                              | 6.8.0    |
+| Newtonsoft.Json                                             | 13.0.1   |
+| RabbitMQ.Client                                             | 6.8.1    |
+| Swashbuckle.AspNetCore                                      | 6.5.0    |
+| System.IdentityModel.Tokens.Jwt                             | 6.8.0    |
+| System.IdentityModel.Tokens.Jwt                             | 6.35.0   |
+| Blazored.LocalStorage                                       | 4.5.0    |
+
